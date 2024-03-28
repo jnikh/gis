@@ -1,0 +1,19 @@
+PRACTICAL 7 
+
+# POINTS IN POLYGON ANALYSIS 
+
+
+STEP 1 : LAYER > ADD LAYER > ADD DELIMITED TEXT LAYER > PRACT 7 > C > "EARTHQUAKEDATABASE" 
+         ADD > CLOSE 
+
+STEP 2 : LAYER > ADD LAYER > VECTOR LAYER > 3 DOT > PRACT T > C > ZIP FOLDER "ne_10m_admin_0
+         _countries" > ADD > CLOSE 
+
+STEP 3 : VECTOR > ANALYSIS TOOLS > COUNT POINTS IN POLYGON  > 
+         polygon choose ne_10m_admin_0_countries > 
+         and within points select earthquake >
+         COUNT type "earthquake_counts" > 3 DOT SAVE FILE (FILE TYPE JPKG / NAME  
+         earthquake_counts) > RUN > CLOSE 
+
+STEP 4 : CHOOSE "i" BUTTON ON UPSIDE OF MENU > CLICK ON A RANDOM COUNTRIES TO KNOW THE DETAILS
+         OF EARTHQUAKE 

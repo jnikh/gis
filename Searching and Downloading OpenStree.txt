@@ -1,0 +1,17 @@
+Searching and Downloading OpenStreetMap Data 
+
+➢ Add “Open Layer” and “OSM Search” Plugin from Not Installed option from Plugin Manager 
+Dialog Box. 
+
+➢ The OSM Place Search plugin will install itself as a Panel in QGIS, if not go to View → Panels → 
+select OSM Place Search. 
+
+➢ Go to Web → OpenLayer Plugin and select Open Street Map 
+
+➢ A World map will appear on screen. 
+
+➢ If an error occurs in loading maps, go to project properties → CRS → no projection 
+
+➢ In OSM Place search Pane → Enter Mumbai or any place name to search 
+
+➢ Double click on the desired place in OSM Place search Panel or Click and press zoom

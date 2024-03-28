@@ -1,0 +1,25 @@
+PRACTICAL 7 D 
+
+# d.Performing spatial queries
+
+1. Go to layer > Add Layer > Add Vector Layer > select
+‘ne_10m_populated_places_simple.shp’ file > add
+2. Select another file ‘ne_10m_rivers_lake_centerlines.shp’ file > add
+3. Change the color of the river lake layer. Right click on
+ne_10m_rivers_lake_centerlines layer > properties > within symbology
+select topo hydrology > apply > ok.
+4. Go to Project > Properties > CRS > type in the filter tab ‘54032’ > select
+‘World_Azimuthal_Equidistant’ wIth authority id ‘ESRI:54032’ > apply >
+ok
+5. Go to Vector > Geoprocessing Tools > Buffer.
+6. Within input layer select ne_10m_rivers_lake_centerlines
+7. Within distance type 0.02 > click on Run.
+8. Change the colour of populated places. Right click on
+ne_10m_populated_places_simple > properties > symbology > choose
+brown.
+9. Go to Vector > Research Tools > select by location.
+10.Within select features from select Buffered > click on Run.
+11.Give the label. Right on rivers layers > properties > labels > select Single
+labels > apply > ok.
+On zoom in, we can see the yellow-coloured rivers in the map like Godavari,
+Mahana Nadi we can say that within 2 km range they are most populated.

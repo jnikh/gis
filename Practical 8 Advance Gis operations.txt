@@ -1,0 +1,67 @@
+//practical 8a: Nearest Neighbor analysis
+step 1): Go to layer tab – Add layer – Add vector layer
+Select vector dataset as -ne_10m_populated_places_simple.shp click on add.
+step 2): Go to layer tab – Add layer – Add delimited text layer
+Select vector dataset as -earthquakedatabase1.tsv file click on add.
+x field->longitude y field->latitude
+step 3): Right click on earthquakedatabase – click on open attribute table you will see some null
+values 
+step4): Go to processing tab – toolbox – vector geometry – select remove null geometrics. Select
+the option also remove empty geometrics click on run->
+	select input layer earthquake databases and tick on all
+step 5): Go to processing tab – toolbox – vector analysis – Distance to Nearest Hub (Line to Hub)
+	   1)source points layer-> non null geometrics
+	   2)destination hubs layer-> ne_10m_populated_places
+	   3)hub layer name attribute->name
+	   4)measurement unit->kilometer
+	   5)hub distance->save file as earthquake_city.gpkg
+
+//Practical 8b:Sampling Raster Data using Points or Polygons.
+
+step 1):Layer->Add layer-> Add raster layer in that select
+step 2): In the data sets select this image - us.tmax_nohads_ll_20140525_float click on add
+step 3): Go to layer tab – add layer – add delimited text layer
+	    In the data sets select - 2013_Gaz_ua_national 
+step 4):In Delimited text->Geometry definitions->x field->INTPLONG
+									 y field->INTPLAT and add
+step 5): Go to processing tab – toolbox – raster analysis – double click on sample raster values.
+	1) select raster value->us.tmax_nohads_ll_20140525_float 
+	2)output column->name it->tmax_ and run->close and click on i
+step 6):select sample and 2013 us national layer in layers tab right click and remove layer
+step 7):Go to layer tab – add layer – add vector layer
+In the data sets select tl_2018_us_county.shp click on add
+step 8):: Go to processing – toolbox – zonal statistics
+	   1)select raster value->us.tmax_nohads_ll_20140525_float 
+	   2)output column prefix->tmax_
+	   3)Click on statistics three dots and select only mean value->ok and then run
+step 9): zonal statistics->right click->properties->symbology->
+graduated(dropdown at starting)->value->tmax_mean->select color->click on classify and apply
+
+//practical 8c: Interpolating Point Data.
+
+step 1):Go to layer tab – add layer – add vector layer
+In the data sets select - Arlington_Surroundings_2007_stpl83.shp click on add.
+step 2): Go to layer tab – add layer – add vector layer
+In the data sets select - Boundary2004_550_stpl83.shp click on add.
+step 3):Go to layer tab – add layer – add vector layer
+In the data sets select - Islands_2004_550_stpl83.shp click on add.
+step 4): Go to processing tab – toolbox – interpolation (search) – TIN interpolation
+		1)vector layer->Arlington_Surroundings_2007
+		  Interpolation attribute->elevation and click on +icon(green logo)
+		2)same for Islands_2004_550_stpl83 
+			type->breaklines
+			extent->three dots->calculate from layer->Boundary2004_550_stpl83
+			pixel size->5
+			interpolated->three dots->save file elevation and run
+step 5): deselect layers and only check in elevation tin layer
+step 6):Go to processing – toolbox – GDAL – raster extraction – clip raster may mask layer.
+	   	1)mask layer->Boundary2004_550_stpl83
+		2)scroll down->advanced parameters->three dots->save file elevation_tin_clipped and run
+step 7): deselect elevation tin layer and right click->properties->symbology
+		render type-single band pseudocolor
+		give color ramp(any) and classify and ok
+step 8):  In the processing -toolbox -GDAL – raster extraction- select contour
+		1)Interval between contour lines->5.000000 and save file and run
+		   and deselect previous layer
+step 9):contour->right click layer properties->labels->single labels and value->ELEV
+			placement->mode->curved->apply and ok and again select elevation_tin_clipped layer->done

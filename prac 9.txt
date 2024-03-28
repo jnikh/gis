@@ -1,0 +1,26 @@
+Step 1: Open Kenya_epidemicological_data.xls in excel. Go to view tab, click freeze panes and choose freeze top row.
+Step 2: Select the entire “child_id” column. Under home tab, click on conditional formatting – highlight cell rules – select duplicate values.
+Now select the first combo box and select Duplicate and select Light red fill with Dark red text in the next combo box.
+Step 3: Removing Duplicates Select all the columns of existing worksheet Now go to Data Tab and select Remove Duplicates
+Step 4: Coding of variables In the current worksheet, select the sex column. Now type Ctrl+F and use Replace Function and Replace as follows 
+M-1 and F-2 Please keep track of how many values are getting replace.
+Step 5: Verifying the plausibility of data
+In this step, we perform two basic operations 
+A. Coding of variables
+B. Using a filter to detect outliners 
+A) Coding of variables Select the age column in the existing worksheet. Now go to Insert tab and select Scatter.
+b) Using a filter to detect outliners 
+First go to the Home Tab>Sort and Filter>Filter. Click and apply the filter to all the columns of the worksheet. 
+Now click on age filter and click on Number Filter> Greater Than option and type the value 20 in greater than field.
+
+
+
+Step 6: Logical Data checks In this step, we perform two basic operations
+A. Cross Tabulations 
+B. Formulas
+⦁	Cross Tabulations Open the existing worksheet. Now go to Insert Tab and select Pivot table function.
+An empty table is inserted in a new sheet and a window will open on the right hand side named PIVOT TABLE FIELD LIST.
+From the PivotTable Field List, drag the “stool” item and drop it into the “Row Label” field as show above. 
+Similarly, Click on anysth_inf and draw it into the “Column labels” and “Σ Values” field. To include the count of observations in the table you might need to change the value field settings to count. 
+Click on the combo box Sum of stools and Click on Value Field Settings. Change the value in Summarize value filed by to Count and click OK. Table is updated with count values as shown below
+⦁	Formulas Open the existing worksheet Create a new column with the variable called check Type the following formula in S2 column of worksheet =IF(AND(H2=0, NOT(P2="")),1,0)b)
